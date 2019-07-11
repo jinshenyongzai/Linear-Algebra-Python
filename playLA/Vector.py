@@ -21,6 +21,10 @@ class Vector:
         if self.norm() < EPSILON:
             raise ZeroDivisionError("Normalize error! norm is zero.")
         return Vector(self._values) / self.norm()
+    
+    def underlying_list(self):
+        """返回向量的底层列表"""
+        return self._values[:]
 
     def __add__(self, another):
         """向量加法，返回结果向量"""
