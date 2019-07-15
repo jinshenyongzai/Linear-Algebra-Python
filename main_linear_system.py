@@ -1,7 +1,7 @@
 from playLA.Matrix import Matrix
 from playLA.Vector import Vector
 from playLA.LinearSystem import LinearSystem
-from playLA.LinearSystem import inv
+from playLA.LinearSystem import inv, rank
 
 if __name__ == "__main__":
 
@@ -78,3 +78,8 @@ if __name__ == "__main__":
     print(invA)
     print(A.dot(invA))
     print(invA.dot(A))
+    print()
+
+    print("rank A8 = {}".format(rank(A8)))
+    print("rank A7 = {}".format(rank(A7)))
+    print("rank A6 = {}".format(rank(A6)))
