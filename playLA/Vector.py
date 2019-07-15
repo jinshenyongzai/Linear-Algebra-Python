@@ -1,4 +1,4 @@
-from ._global import is_zero
+from ._global import is_zero, is_equal
 import math
 
 
@@ -64,6 +64,17 @@ class Vector:
     def __neg__(self):
         """返回向量取负的结果向量"""
         return -1 * self
+
+    def __eq__(self, other):
+        """返回向量是否相等"""
+        other_list = other.underlying_list();
+        if (len(other_list) != len(self._values)):
+            return False
+        return all(is_equal(x, y) for x, y in zip(self._values, other_list))
+
+    def __neq__(self, other):
+        """返回向量是否不等"""
+        return not (self == other)
 
     def __iter__(self):
         """返回向量的迭代器"""
